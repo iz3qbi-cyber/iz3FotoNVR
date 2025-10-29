@@ -1,0 +1,1032 @@
+/* iz3FotoNVR - Stili Completi */
+
+:root {
+    --primary-color: #004080;
+    --secondary-color: #007bff;
+    --success-color: #28a745;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+    --info-color: #17a2b8;
+    --light-color: #f8f9fa;
+    --dark-color: #343a40;
+    --gradient-solar: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --gradient-energy: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+    --gradient-camera: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 1rem;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background: var(--gradient-solar);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 8px 32px rgba(0, 64, 128, 0.2);
+}
+
+header h1 {
+    margin: 0 0 1rem 0;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+/* Navigation */
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-weight: 500;
+}
+
+nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+}
+
+nav ul li a.active {
+    background: rgba(255, 255, 255, 0.3);
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.4);
+}
+
+/* Main Content */
+main {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Dashboard Layout */
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Homepage Styles */
+.welcome-section {
+    text-align: center;
+    padding: 2rem;
+    background: var(--gradient-solar);
+    color: white;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+}
+
+.welcome-section h2 {
+    margin: 0 0 1rem 0;
+    font-size: 2rem;
+}
+
+.welcome-section p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.quick-access {
+    margin: 2rem 0;
+}
+
+.quick-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.quick-btn {
+    display: block;
+    text-decoration: none;
+    padding: 2rem;
+    border-radius: 1rem;
+    color: white;
+    transition: all 0.3s ease;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.quick-btn.solar {
+    background: var(--gradient-energy);
+}
+
+.quick-btn.cameras {
+    background: var(--gradient-camera);
+}
+
+.quick-btn.config {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.quick-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.quick-btn h4 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.3rem;
+}
+
+.quick-btn p {
+    margin: 0;
+    opacity: 0.9;
+    font-size: 0.95rem;
+}
+
+.system-info, .features {
+    margin: 2rem 0;
+}
+
+.info-grid, .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.info-card, .feature {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.info-card:hover, .feature:hover {
+    transform: translateY(-3px);
+}
+
+.info-card h4, .feature h4 {
+    margin: 0 0 0.5rem 0;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+.info-card p {
+    margin: 0;
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+.info-card small {
+    display: block;
+    margin-top: 0.5rem;
+    color: #666;
+    font-size: 0.85rem;
+}
+
+.feature ul {
+    margin: 0.5rem 0 0 0;
+    padding-left: 1.2rem;
+}
+
+.feature li {
+    margin: 0.3rem 0;
+    color: #555;
+}
+
+/* Buttons */
+button, .btn {
+    background: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    margin: 0.25rem;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+}
+
+button:hover, .btn:hover {
+    background: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 123, 255, 0.3);
+}
+
+button.active {
+    background: var(--success-color);
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+}
+
+button.add-camera-btn, button.save-btn {
+    background: var(--success-color);
+    font-size: 1rem;
+    padding: 1rem 2rem;
+}
+
+button.add-camera-btn:hover, button.save-btn:hover {
+    background: #1e7e34;
+}
+
+/* Configuration Styles */
+.config-section {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.camera-configs {
+    margin: 1rem 0;
+}
+
+.camera-config {
+    background: rgba(255, 255, 255, 0.9);
+    margin: 1rem 0;
+    padding: 1.5rem;
+    border: 2px solid #dee2e6;
+    border-radius: 1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.camera-config:hover {
+    border-color: var(--secondary-color);
+    box-shadow: 0 8px 25px rgba(0, 123, 255, 0.15);
+}
+
+.camera-config h3 {
+    margin: 0 0 1rem 0;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.camera-config label {
+    display: block;
+    margin: 0.75rem 0 0.25rem 0;
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+.camera-config input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.75rem;
+    border: 2px solid #e9ecef;
+    border-radius: 0.5rem;
+    font-size: 0.95rem;
+    transition: border-color 0.3s ease;
+}
+
+.camera-config input:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.inverter-config {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    border: 2px solid #dee2e6;
+    margin: 1rem 0;
+}
+
+.inverter-config label {
+    display: block;
+    margin: 0.75rem 0 0.25rem 0;
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+.inverter-config input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.75rem;
+    border: 2px solid #e9ecef;
+    border-radius: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.section-divider {
+    border: none;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--secondary-color), transparent);
+    margin: 2rem 0;
+}
+
+.save-section {
+    text-align: center;
+    margin: 2rem 0;
+    padding: 2rem;
+    background: rgba(40, 167, 69, 0.1);
+    border-radius: 1rem;
+    border: 2px solid rgba(40, 167, 69, 0.2);
+}
+
+.save-note {
+    margin: 1rem 0 0 0;
+    color: #666;
+    font-style: italic;
+}
+
+/* DVR Styles */
+.dvr-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.camera-count {
+    font-weight: 600;
+    color: var(--primary-color);
+    background: rgba(0, 64, 128, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+}
+
+.camera-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem;
+}
+
+.camera-video {
+    background: white;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    border: 2px solid rgba(0, 0, 0, 0.05);
+}
+
+.camera-video:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.camera-header {
+    padding: 1rem;
+    background: var(--gradient-camera);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.camera-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.camera-ip {
+    font-family: 'Courier New', monospace;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.85rem;
+}
+
+.video-container {
+    position: relative;
+    background: #000;
+}
+
+.video-container video {
+    width: 100%;
+    height: auto;
+    min-height: 200px;
+    display: block;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.camera-video:hover .video-overlay {
+    opacity: 1;
+}
+
+.video-overlay button {
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+.video-fallback {
+    display: none;
+    padding: 2rem;
+    text-align: center;
+    background: #f8f9fa;
+    color: #666;
+}
+
+.camera-info {
+    padding: 1rem;
+    background: #f8f9fa;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.status-indicator {
+    font-weight: 600;
+}
+
+.status-online {
+    color: var(--success-color);
+}
+
+.status-offline {
+    color: var(--danger-color);
+}
+
+/* Photovoltaic Styles */
+.inverter-overview {
+    background: var(--gradient-solar);
+    color: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+}
+
+.inverter-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.data-card {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.data-card:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.data-card h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 0.9rem;
+    opacity: 0.9;
+    font-weight: 500;
+}
+
+.data-card .value {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.status-ok {
+    color: #4ade80 !important;
+    text-shadow: 0 0 10px rgba(74, 222, 128, 0.5);
+}
+
+.status-error {
+    color: #ef4444 !important;
+    text-shadow: 0 0 10px rgba(239, 68, 68, 0.5);
+}
+
+/* String Data */
+.string-data {
+    margin-top: 2rem;
+}
+
+.string-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.string-card {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.string-card h4 {
+    margin: 0 0 1rem 0;
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+.string-card p {
+    margin: 0.5rem 0;
+    opacity: 0.95;
+    font-size: 0.95rem;
+}
+
+/* Energy Statistics */
+.energy-stats {
+    background: var(--gradient-energy);
+    color: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+}
+
+.stats-grid {
+    display: grid;
+    gap: 2rem;
+    margin: 1rem 0;
+}
+
+.stats-section h3 {
+    margin: 0 0 1rem 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.stats-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.stat-card h4 {
+    margin: 0 0 0.5rem 0;
+    font-size: 0.95rem;
+    opacity: 0.9;
+    font-weight: 500;
+}
+
+.stat-card .value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0.5rem 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.stat-card.economics .breakdown {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-top: 0.75rem;
+    font-size: 0.8rem;
+    opacity: 0.85;
+}
+
+.tariff-info {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.tariff-info p {
+    margin: 0.5rem 0;
+    font-size: 0.95rem;
+    opacity: 0.95;
+}
+
+/* Panel Controls */
+.panel-controls {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.view-toggle {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+/* Panel Grid View */
+.panels-summary {
+    background: rgba(0, 123, 255, 0.1);
+    padding: 1rem 1.5rem;
+    border-radius: 0.75rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(0, 123, 255, 0.2);
+}
+
+.panels-summary p {
+    margin: 0.25rem 0;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.panels-grid-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.panel-card {
+    border: 2px solid #dee2e6;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    background: white;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.panel-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.panel-card.panel-ok {
+    border-color: var(--success-color);
+    background: rgba(40, 167, 69, 0.02);
+}
+
+.panel-card.panel-warning {
+    border-color: var(--warning-color);
+    background: rgba(255, 193, 7, 0.05);
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.panel-header h4 {
+    margin: 0;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.panel-status {
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.panel-ok .panel-status {
+    background: rgba(40, 167, 69, 0.2);
+    color: var(--success-color);
+}
+
+.panel-warning .panel-status {
+    background: rgba(255, 193, 7, 0.2);
+    color: #856404;
+}
+
+.panel-data {
+    display: grid;
+    gap: 0.75rem;
+}
+
+.panel-metric {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+}
+
+.metric-label {
+    font-size: 0.9rem;
+    color: #6c757d;
+    font-weight: 500;
+}
+
+.metric-value {
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 1rem;
+}
+
+.efficiency-bar {
+    position: relative;
+    height: 25px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    margin-top: 0.75rem;
+    overflow: hidden;
+}
+
+.efficiency-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--success-color) 0%, #20c997 50%, var(--warning-color) 100%);
+    border-radius: 15px;
+    transition: width 0.5s ease;
+}
+
+.efficiency-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--dark-color);
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+/* Panel Table View */
+.panels-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    background: white;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.panels-table th,
+.panels-table td {
+    padding: 1rem 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.panels-table th {
+    background: var(--gradient-solar);
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+    position: sticky;
+    top: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.panels-table tr:hover {
+    background: rgba(0, 123, 255, 0.05);
+}
+
+.panels-table td {
+    font-size: 0.9rem;
+    color: var(--dark-color);
+}
+
+.status-warning {
+    color: #856404;
+    font-weight: 600;
+}
+
+/* Utility Classes */
+.loading {
+    text-align: center;
+    padding: 3rem 2rem;
+    color: #6c757d;
+    font-style: italic;
+    background: rgba(0, 123, 255, 0.05);
+    border-radius: 1rem;
+    border: 2px dashed rgba(0, 123, 255, 0.2);
+}
+
+.error {
+    color: var(--danger-color);
+    text-align: center;
+    padding: 2rem;
+    background: rgba(220, 53, 69, 0.1);
+    border: 2px solid rgba(220, 53, 69, 0.2);
+    border-radius: 1rem;
+    font-weight: 500;
+}
+
+.no-data, .no-cameras {
+    text-align: center;
+    padding: 3rem 2rem;
+    color: #6c757d;
+    background: rgba(108, 117, 125, 0.05);
+    border-radius: 1rem;
+    border: 2px dashed rgba(108, 117, 125, 0.3);
+}
+
+.no-cameras h3 {
+    margin: 0 0 1rem 0;
+    color: var(--primary-color);
+}
+
+.no-cameras a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.no-cameras a:hover {
+    text-decoration: underline;
+}
+
+.timestamp {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    text-align: center;
+    font-size: 0.8rem;
+    opacity: 0.8;
+    font-style: italic;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1rem;
+    color: #666;
+    font-size: 0.9rem;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 1rem;
+    backdrop-filter: blur(10px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 0.5rem;
+    }
+    
+    header {
+        padding: 1rem;
+    }
+    
+    header h1 {
+        font-size: 1.4rem;
+    }
+    
+    main {
+        padding: 1rem;
+    }
+    
+    .inverter-grid,
+    .stats-cards,
+    .string-grid,
+    .info-grid,
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .panels-grid-layout {
+        grid-template-columns: 1fr;
+    }
+    
+    .camera-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .view-toggle {
+        justify-content: center;
+    }
+    
+    .dvr-controls {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    nav ul {
+        justify-content: center;
+    }
+    
+    .quick-buttons {
+        grid-template-columns: 1fr;
+    }
+    
+    .panels-table {
+        font-size: 0.8rem;
+    }
+    
+    .panels-table th,
+    .panels-table td {
+        padding: 0.5rem 0.25rem;
+    }
+    
+    .camera-config input,
+    .inverter-config input {
+        font-size: 16px; /* Prevent zoom on iOS */
+    }
+}
+
+@media (max-width: 480px) {
+    .data-card .value,
+    .stat-card .value {
+        font-size: 1.3rem;
+    }
+    
+    .quick-btn {
+        padding: 1.5rem;
+    }
+    
+    .camera-header {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+    
+    .dvr-controls {
+        gap: 0.5rem;
+    }
+    
+    button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* Print Styles */
+@media print {
+    header nav,
+    .dvr-controls,
+    .panel-controls,
+    .video-overlay,
+    button {
+        display: none;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+    
+    main {
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+    
+    .inverter-overview,
+    .energy-stats {
+        background: white;
+        color: black;
+        border: 1px solid #ccc;
+    }
+}
