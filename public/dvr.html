@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8" />
+    <title>iz3FotoNVR - DVR Telecamere</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="dvr.js"></script>
+</head>
+<body onload="loadCameras()">
+    <header>
+        <h1>iz3FotoNVR - DVR Telecamere ONVIF</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="dvr.html" class="active">DVR Telecamere ONVIF</a></li>
+                <li><a href="photovoltaic.html">Monitoraggio Fotovoltaico</a></li>
+                <li><a href="config.html">Configurazione</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="dvr-controls">
+            <button onclick="loadCameras()" class="refresh-btn">🔄 Aggiorna Telecamere</button>
+            <button onclick="toggleFullscreen()" class="fullscreen-btn">🖥️ Schermo Intero</button>
+            <span class="camera-count" id="cameraCount">Telecamere: 0</span>
+        </div>
+        <div id="cameraGrid" class="camera-grid">
+            <div class="loading">Caricamento telecamere in corso...</div>
+        </div>
+    </main>
+</body>
+</html>

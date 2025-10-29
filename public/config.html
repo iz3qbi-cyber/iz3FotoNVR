@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8" />
+    <title>iz3FotoNVR - Configurazione</title>
+    <link rel="stylesheet" href="style.css" />
+    <script>
+        async function saveConfig() {
+            const config = {
+                cameras: []
+            };
+            const cameraCount = document.querySelectorAll('.camera-config').length;
+            for (let i = 0; i < cameraCount; i++) {
+                const base = document.getElementById(`camera${i}`);
+                if (base) {
+                    config.cameras.push({
+                        ip: base.querySelector('.ip').value,
+                        port: base.querySelector('.port').value,
+                        username: base.querySelector('.username').value,
+                        password: base.querySelector('.password').value
+                    });
+                }
+            }
+            config.hvHost = document.getElementById('hvHost').value;
+            config.hvPort = document.getElementById('hvPort').value;
+
+            try {
+                const response = await fetch('/api/config', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(config)
+                });
+                if (response.ok) {
+                    alert('Configurazione salvata con successo');
+                } else {
+                    alert('Errore nel salvataggio della configurazione');
+                }
+            } catch (error) {
+                alert('Errore nella comunicazione con il server');
+            }
+        }
+
+        function addCameraConfig() {
+            const container = document.getElementById('camerasContainer');
+            const num = container.children.length;
+            const div = document.createElement('div');
+            div.setAttribute('id', `camera${num}`);
+            div.classList.add('camera-config');
+            div.innerHTML = `
+                <h3>Telecamera #${num + 1}</h3>
+                <label>IP: <input type="text" class="ip" placeholder="192.168.1.10X" /></label><br/>
+                <label>Porta: <input type="text" class="port" value="80" /></label><br/>
+                <label>Utente: <input type="text" class="username" placeholder="admin" /></label><br/>
+                <label>Password: <input type="password" class="password" /></label><br/>
+                <button type="button" onclick="removeCameraConfig(${num})">Rimuovi Telecamera</button>
+                <hr/>
+            `;
+            container.appendChild(div);
+        }
+
+        function removeCameraConfig(num) {
+            const div = document.getElementById(`camera${num}`);
+            if (div) div.remove();
+        }
+
+        async function loadConfig() {
+            try {
+                const response = await fetch('/api/config');
+                if (response.ok) {
+                    const config = await response.json();
+                    const container = document.getElementById('camerasContainer');
+                    container.innerHTML = '';
+                    if (config.cameras && Array.isArray(config.cameras)) {
+                        config.cameras.forEach((cam, i) => {
+                            addCameraConfig();
+                            const base = document.getElementById(`camera${i}`);
+                            base.querySelector('.ip').value = cam.ip || '';
+                            base.querySelector('.port').value = cam.port || '80';
+                            base.querySelector('.username').value = cam.username || '';
+                            base.querySelector('.password').value = cam.password || '';
+                        });
+                    } else {
+                        addCameraConfig();
+                    }
+                    document.getElementById('hvHost').value = config.hvHost || '192.168.1.20';
+                    document.getElementById('hvPort').value = config.hvPort || '502';
+                } else {
+                    alert('Errore nel caricamento della configurazione');
+                }
+            } catch {
+                alert('Errore nella comunicazione con il server');
+            }
+        }
+
+        window.onload = loadConfig;
+    </script>
+</head>
+<body>
+    <header>
+        <h1>iz3FotoNVR - Configurazione Sistema</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="dvr.html">DVR Telecamere ONVIF</a></li>
+                <li><a href="photovoltaic.html">Monitoraggio Fotovoltaico</a></li>
+                <li><a href="config.html" class="active">Configurazione</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="config-section">
+            <section>
+                <h2>Configurazione Telecamere ONVIF</h2>
+                <p>Aggiungi fino a 8 telecamere ONVIF con credenziali individuali.</p>
+                <div id="camerasContainer" class="camera-configs"></div>
+                <button type="button" onclick="addCameraConfig()" class="add-camera-btn">+ Aggiungi Telecamera ONVIF</button>
+            </section>
+            
+            <hr class="section-divider"/>
+            
+            <section>
+                <h2>Configurazione Inverter Huawei SUN2000-10KTL-M1</h2>
+                <p>Configura la connessione Modbus TCP all'inverter fotovoltaico.</p>
+                <div class="inverter-config">
+                    <label for="hvHost">IP Inverter Huawei:</label><br/>
+                    <input type="text" id="hvHost" placeholder="192.168.1.20" /><br/>
+                    <label for="hvPort">Porta Modbus TCP:</label><br/>
+                    <input type="text" id="hvPort" placeholder="502" /><br/>
+                </div>
+            </section>
+            
+            <div class="save-section">
+                <button type="button" onclick="saveConfig()" class="save-btn">💾 Salva Configurazione</button>
+                <p class="save-note">Nota: Dopo il salvataggio, i dati saranno immediatamente disponibili nel sistema.</p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8"/>
+    <title>iz3FotoNVR - Monitoraggio Fotovoltaico</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="photovoltaic.js"></script>
+</head>
+<body onload="loadPhotovoltaicData()">
+    <header>
+        <h1>iz3FotoNVR - Monitoraggio Fotovoltaico Huawei SUN2000-10KTL-M1</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="dvr.html">DVR Telecamere ONVIF</a></li>
+                <li><a href="photovoltaic.html" class="active">Monitoraggio Fotovoltaico</a></li>
+                <li><a href="config.html">Configurazione</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="dashboard">
+            <!-- Dati generali inverter -->
+            <section class="inverter-overview" id="inverterData">
+                <h2>Stato Generale Inverter SUN2000-10KTL-M1</h2>
+                <div class="loading">Caricamento dati inverter...</div>
+            </section>
+
+            <!-- Statistiche energetiche e costi -->
+            <section class="energy-stats" id="energyStats">
+                <h2>Statistiche Energetiche e Costi (Octopus Italia)</h2>
+                <div class="loading">Caricamento statistiche...</div>
+            </section>
+
+            <!-- Controlli visualizzazione pannelli -->
+            <section class="panel-controls">
+                <h2>Monitoraggio Pannelli Dettagliato</h2>
+                <div class="view-toggle">
+                    <button id="gridViewBtn" onclick="showPanelView('grid')" class="active">📊 Vista Griglia</button>
+                    <button id="tableViewBtn" onclick="showPanelView('table')">📋 Vista Tabella</button>
+                    <button id="refreshPanelsBtn" onclick="loadPanelData()">🔄 Aggiorna Pannelli</button>
+                </div>
+            </section>
+
+            <!-- Vista griglia pannelli -->
+            <section class="panels-grid" id="panelsGrid" style="display: block;">
+                <h3>Vista Griglia Pannelli</h3>
+                <div id="panelGridContainer" class="loading">Caricamento pannelli...</div>
+            </section>
+
+            <!-- Vista tabella pannelli -->
+            <section class="panels-table" id="panelsTable" style="display: none;">
+                <h3>Vista Tabella Pannelli</h3>
+                <div id="panelTableContainer" class="loading">Caricamento tabella...</div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>
